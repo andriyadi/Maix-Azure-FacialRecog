@@ -8,3 +8,5 @@
 src/Secrets.h
 _backup/
 test/
+*.DS_Store
+*/.DS_Store
