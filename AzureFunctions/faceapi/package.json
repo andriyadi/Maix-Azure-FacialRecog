@@ -1,0 +1,6 @@
+{
+    "name": "x-image",
+    "dependencies": {
+        "request": "^2.88.0"
+    }
+}
