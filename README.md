@@ -1,2 +1,2 @@
 # Maix-Azure-FacialRecog
- Face detection using K210 MCU and Maixduino, then leveraging Azure Face API for age, gender, emotion recognition 
+Facial recognition by combining the power of AI at the Edge and the Cloud. Face detection is done right on K210 Microcontroller on Sipeed Maix dev board, developed with Maixduino framework. Then Azure Face API in the Cloud is leveraged for age, gender, emotion recognition.
