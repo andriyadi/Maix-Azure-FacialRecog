@@ -37,7 +37,13 @@ Under `src` folder, create a file named `Secrets.h` with the content something l
 
 Replace all values with format of `<...>` inside quote.
 
+## Azure Functions
+If you notice, there's folder named [`AzureFunctions/faceapi`](https://github.com/andriyadi/Maix-Azure-FacialRecog/tree/master/AzureFunctions/faceapi) that contains Azure Functions code, written with Node.js. 
+
+You could optionally deploy it as API and change this project accordingly. I initially did that way since `WiFiEspClient` library in Maixduino initially didn't support HTTPS. So I need to create and deploy some kind of proxy to receive request from Maix board via HTTP and does request to Face API over HTTPS, then return the response as it is. That proxy is implemented as Azure Function.
+
+Recently I noticed `WiFiEspClient` already supported HTTPS, so why don't access Face API directly. However, you may still want to use that kind of proxy if you want to only transmit the image (captured by camera) once, then process the image in the cloud by combining multiple Azure services. For example, combining Face API with Azure Custom Vision.
 
 ## Credits
-* [ArduinoHttpClient](https://github.com/arduino-libraries/ArduinoHttpClient.git)
+* [ArduinoHttpClient](https://github.com/arduino-libraries/ArduinoHttpClient.git). I include it here, since I did some modification that's specific to this project
 * JPEG Encoder. Found it somewhere, but so sorry I honestly forgot. Tell me the link if anyone know.
