@@ -237,7 +237,7 @@ static void drawboxlabel(Sipeed_ST7789 &_lcd, uint32_t x1, uint32_t y1, uint32_t
 
   //Initial
   uint32_t w = x2 - x1;
-  uint16_t str_w = LABEL_TEXT_SIZE * 6 * strlen(msg); //5 hello
+  uint16_t str_w = LABEL_TEXT_SIZE * 6 * strlen(msg);
   uint16_t str_x = x1 + (w - str_w) / 2;
 
   // bool atTop = y1 > minTxtTop;
@@ -410,7 +410,7 @@ void loop() {
         lastRecognitionStateChangeMillis = millis();
       }
 
-      if ((recognitionState == RECOGNITION_STATE_UNKNOWN) && millis() - lastRecognitionStateChangeMillis > 1000) {
+      if ((recognitionState == RECOGNITION_STATE_UNKNOWN) && millis() - lastRecognitionStateChangeMillis > FACE_DETECTION_DEBOUNCE_MS) {
         recognitionState = RECOGNITION_STATE_REQUESTED;
         lastRecognitionStateChangeMillis = millis();
       }
